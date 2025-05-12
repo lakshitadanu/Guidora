@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Tell us about yourself - Guidora{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center mb-5">
+        <h1 class="display-4 mb-3">Tell us about yourself</h1>
+        <p class="lead">Select the category that best describes you to get personalized recommendations</p>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <a href="{% url 'register_school' %}" class="text-decoration-none">
+                <div class="card h-100 selection-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle mb-4">
+                            <i class="fas fa-book fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="card-title mb-3">School Student</h3>
+                        <p class="text-muted mb-4">Currently in or recently completed 12th grade</p>
+                        <ul class="list-unstyled text-start">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Course recommendations</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>College guidance</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-5">
+            <a href="{% url 'register_college' %}" class="text-decoration-none">
+                <div class="card h-100 selection-card">
+                    <div class="card-body text-center p-4">
+                        <div class="icon-circle mb-4">
+                            <i class="fas fa-graduation-cap fa-2x text-primary"></i>
+                        </div>
+                        <h3 class="card-title mb-3">College Student</h3>
+                        <p class="text-muted mb-4">Currently pursuing or recently graduated from college</p>
+                        <ul class="list-unstyled text-start">
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Resume Analysis</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Skill gap identification</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Course recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .selection-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+        border: none;
+        background-color: white;
+        border-radius: 15px;
+    }
+
+    .selection-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .icon-circle {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: var(--primary-purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .text-success {
+        color: #28a745 !important;
+    }
+
+    .card-body {
+        padding: 2rem;
+    }
+</style>
+{% endblock %} 

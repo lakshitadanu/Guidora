@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3>Resume Analysis Results</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Extracted Skills</h4>
+                    {% if analysis.skills %}
+                        {% for category, skills in analysis.skills.items %}
+                        <div class="mb-3">
+                            <h5>{{ category }}</h5>
+                            <ul class="list-group">
+                                {% for skill in skills %}
+                                <li class="list-group-item">{{ skill }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No skills extracted</p>
+                    {% endif %}
+
+                    <h4 class="mt-4">Education</h4>
+                    {% if analysis.education %}
+                        {% for edu in analysis.education %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                {% if edu.degree %}<p><strong>Degree:</strong> {{ edu.degree }}</p>{% endif %}
+                                {% if edu.university %}<p><strong>Institution:</strong> {{ edu.university }}</p>{% endif %}
+                                {% if edu.year %}<p><strong>Year:</strong> {{ edu.year }}</p>{% endif %}
+                                {% if edu.gpa %}<p><strong>GPA:</strong> {{ edu.gpa }}</p>{% endif %}
+                                {% if edu.major %}<p><strong>Major:</strong> {{ edu.major }}</p>{% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No education details found</p>
+                    {% endif %}
+
+                    <h4 class="mt-4">Experience</h4>
+                    {% if analysis.experience %}
+                        {% for exp in analysis.experience %}
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                {% if exp.job_title %}<p><strong>Position:</strong> {{ exp.job_title }}</p>{% endif %}
+                                {% if exp.company %}<p><strong>Company:</strong> {{ exp.company }}</p>{% endif %}
+                                {% if exp.duration %}<p><strong>Duration:</strong> {{ exp.duration }}</p>{% endif %}
+                                {% if exp.achievements %}
+                                <div>
+                                    <strong>Key Achievements:</strong>
+                                    <ul>
+                                        {% for achievement in exp.achievements %}
+                                        <li>{{ achievement }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>No experience details found</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            {% if analysis.ats_score %}
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h3>ATS Analysis</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Overall Score</h4>
+                            <div class="progress mb-3" style="height: 25px;">
+                                <div class="progress-bar" role="progressbar" 
+                                     style="width: {{ analysis.ats_score.total_score }}%;" 
+                                     aria-valuenow="{{ analysis.ats_score.total_score }}" 
+                                     aria-valuemin="0" 
+                                     aria-valuemax="100">
+                                    {{ analysis.ats_score.total_score|floatformat:1 }}%
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Score Breakdown</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Keyword Match
+                                    <span class="badge bg-primary rounded-pill">{{ analysis.ats_score.breakdown.keyword_match|floatformat:1 }}%</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Format Score
+                                    <span class="badge bg-primary rounded-pill">{{ analysis.ats_score.breakdown.format_score|floatformat:1 }}%</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Contact Information
+                                    <span class="badge bg-primary rounded-pill">{{ analysis.ats_score.breakdown.contact_info|floatformat:1 }}%</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {% if analysis.ats_score.improvements %}
+                    <div class="mt-4">
+                        <h4>Improvement Suggestions</h4>
+                        <ul class="list-group">
+                            {% for suggestion in analysis.ats_score.improvements %}
+                            <li class="list-group-item">{{ suggestion }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %} 

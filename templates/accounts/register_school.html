@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}School Student Registration - Guidora{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">School Student Registration</h2>
+                    <p class="text-center mb-4">Tell us more about yourself to get personalized career recommendations</p>
+                    
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        
+                        <!-- Basic Information -->
+                        <div class="mb-4">
+                            <h4 class="mb-3">Basic Information</h4>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    {{ form.user_form.full_name|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ form.user_form.email|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    {{ form.user_form.phone_number|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ form.user_form.password1|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    {{ form.user_form.password2|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Academic Details -->
+                        <div class="mb-4">
+                            <h4 class="mb-3">Academic Details</h4>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    {{ form.profile_form.school_name|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ form.profile_form.board|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    {{ form.profile_form.stream|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ form.profile_form.tenth_marks|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    {{ form.profile_form.twelfth_marks|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Information -->
+                        <div class="mb-4">
+                            <h4 class="mb-3">Contact Information</h4>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    {{ form.user_form.address|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    {{ form.user_form.city|as_crispy_field }}
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    {{ form.user_form.state|as_crispy_field }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 mb-3">
+                                    {{ form.user_form.pincode|as_crispy_field }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Register & Continue</button>
+                        </div>
+                    </form>
+                    
+                    <div class="text-center mt-3">
+                        <p>Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Form validation
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    });
+
+    // Areas of interest validation
+    const areasOfInterest = document.querySelectorAll('input[name="areas_of_interest"]');
+    areasOfInterest.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const checked = document.querySelectorAll('input[name="areas_of_interest"]:checked');
+            if (checked.length > 3) {
+                this.checked = false;
+                alert('You can select up to 3 areas of interest.');
+            }
+        });
+    });
+});
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .form-control:focus {
+        border-color: var(--primary-pink);
+        box-shadow: 0 0 0 0.2rem rgba(255, 182, 193, 0.25);
+    }
+    
+    .btn-primary {
+        background-color: var(--primary-pink);
+        border-color: var(--primary-pink);
+        color: var(--text-color);
+        padding: 0.75rem 2rem;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--secondary-pink);
+        border-color: var(--secondary-pink);
+    }
+    
+    .form-check-input:checked {
+        background-color: var(--primary-pink);
+        border-color: var(--primary-pink);
+    }
+    
+    .alert {
+        border-radius: 0.5rem;
+    }
+    
+    .form-check {
+        margin-bottom: 0.5rem;
+    }
+    
+    .form-check-label {
+        cursor: pointer;
+    }
+</style>
+{% endblock %} 

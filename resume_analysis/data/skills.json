@@ -1,0 +1,56 @@
+{
+    "Programming Languages": [
+        "python", "java", "javascript", "c++", "c#", "ruby", "php", "swift", "kotlin",
+        "typescript", "golang", "rust", "scala", "r", "matlab", "perl", "shell", "bash",
+        "powershell", "sql", "dart", "lua", "haskell", "assembly"
+    ],
+    "Web Technologies": [
+        "html", "css", "react", "angular", "vue.js", "node.js", "django", "flask",
+        "spring boot", "express.js", "bootstrap", "jquery", "webpack", "sass", "less",
+        "tailwind", "next.js", "gatsby", "graphql", "rest api", "websocket", "pwa",
+        "web components", "webassembly", "three.js", "d3.js"
+    ],
+    "Databases": [
+        "mysql", "postgresql", "mongodb", "oracle", "redis", "elasticsearch",
+        "cassandra", "sqlite", "mariadb", "dynamodb", "firebase", "neo4j", "couchdb",
+        "influxdb", "cockroachdb", "timescaledb", "snowflake", "supabase"
+    ],
+    "Cloud & DevOps": [
+        "aws", "azure", "google cloud", "docker", "kubernetes", "jenkins", "git",
+        "terraform", "ansible", "circleci", "travis ci", "prometheus", "grafana",
+        "nginx", "apache", "lambda", "serverless", "microservices", "iac",
+        "cloud formation", "eks", "aks", "gke", "openshift"
+    ],
+    "AI & Machine Learning": [
+        "machine learning", "deep learning", "tensorflow", "pytorch", "keras",
+        "scikit-learn", "opencv", "nlp", "computer vision", "data science",
+        "neural networks", "reinforcement learning", "transformers", "bert", "gpt",
+        "yolo", "pandas", "numpy", "matplotlib", "seaborn", "spacy"
+    ],
+    "Mobile Development": [
+        "android", "ios", "react native", "flutter", "xamarin", "ionic",
+        "swift ui", "kotlin multiplatform", "mobile app development",
+        "android studio", "xcode", "mobile ui/ux", "app store optimization"
+    ],
+    "Security": [
+        "cybersecurity", "penetration testing", "encryption", "oauth",
+        "authentication", "authorization", "jwt", "ssl/tls", "firewall",
+        "security audit", "vulnerability assessment", "ethical hacking"
+    ],
+    "Soft Skills": [
+        "leadership", "communication", "teamwork", "problem solving",
+        "project management", "agile", "scrum", "critical thinking",
+        "time management", "collaboration", "presentation", "negotiation",
+        "conflict resolution", "adaptability", "creativity"
+    ],
+    "Data Analysis": [
+        "data analytics", "business intelligence", "statistical analysis",
+        "data visualization", "power bi", "tableau", "excel", "sql analysis",
+        "a/b testing", "data mining", "predictive analytics", "data modeling"
+    ],
+    "Testing & QA": [
+        "unit testing", "integration testing", "selenium", "jest", "pytest",
+        "cypress", "jmeter", "postman", "test automation", "quality assurance",
+        "performance testing", "load testing", "stress testing"
+    ]
+} 

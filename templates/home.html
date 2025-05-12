@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% block title %}Guidora - AI-Powered Career Guidance{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section py-5 mb-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h1 class="display-4 fw-bold mb-4">Discover Your Perfect Career Path</h1>
+                <p class="lead mb-4">Guidora helps Indian students find their ideal career through AI-powered guidance and assessments.</p>
+                <div class="d-grid gap-2 d-md-flex">
+                    <a href="{% url 'get_started' %}" class="btn btn-primary btn-lg me-md-2 px-4 py-2">Get Started</a>
+                    <a href="#features" class="btn btn-outline-primary btn-lg px-4 py-2">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/static/images/pic11.png" alt="Career Guidance" class="img-fluid rounded-3 shadow-lg hover-lift">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<section id="features" class="py-5 mb-5">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">Why Choose Guidora?</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-brain fa-3x" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                        <h4 class="card-title mb-3">AI-Powered Assessments</h4>
+                        <p class="card-text">Get personalized career recommendations based on your personality and aptitude assessments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-graduation-cap fa-3x" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Top Institutes</h4>
+                        <p class="card-text">Discover the best educational institutions for your chosen career path.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon mb-4">
+                            <i class="fas fa-comments fa-3x" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Expert Guidance</h4>
+                        <p class="card-text">Chat with our AI advisor for personalized career guidance and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works Section -->
+<section class="py-5 mb-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-5">How It Works</h2>
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="step-circle mb-4">
+                            <span class="h3 mb-0">1</span>
+                        </div>
+                        <h4 class="card-title mb-3">Create Account</h4>
+                        <p class="card-text">Sign up and provide your academic details</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="step-circle mb-4">
+                            <span class="h3 mb-0">2</span>
+                        </div>
+                        <h4 class="card-title mb-3">Take Assessments</h4>
+                        <p class="card-text">Complete personality and aptitude tests</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="step-circle mb-4">
+                            <span class="h3 mb-0">3</span>
+                        </div>
+                        <h4 class="card-title mb-3">Get Recommendations</h4>
+                        <p class="card-text">Receive personalized career suggestions</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="step-circle mb-4">
+                            <span class="h3 mb-0">4</span>
+                        </div>
+                        <h4 class="card-title mb-3">Plan Your Future</h4>
+                        <p class="card-text">Explore educational paths and opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="py-5 mb-5">
+    <div class="container">
+        <div class="card border-0 shadow-lg">
+            <div class="card-body text-center p-5">
+                <h2 class="mb-4">Ready to Discover Your Career Path?</h2>
+                <p class="lead mb-4">Join thousands of students who have found their dream careers with Guidora.</p>
+                <a href="{% url 'get_started' %}" class="btn btn-primary btn-lg px-5 py-3">Get Started Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, rgba(255,105,180,0.1), rgba(147,112,219,0.1));
+        border-radius: 0 0 50px 50px;
+    }
+
+    .hover-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+    }
+
+    .feature-icon {
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .step-circle {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .btn-outline-primary {
+        color: var(--primary-color);
+        border: 2px solid var(--primary-color);
+    }
+
+    .btn-outline-primary:hover {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-color: transparent;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 3rem;
+        position: relative;
+        text-align: center;
+    }
+
+    .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+    }
+
+    .card {
+        overflow: hidden;
+        border-radius: 15px;
+    }
+
+    .bg-light {
+        background-color: #f8f9fa !important;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://kit.fontawesome.com/your-fontawesome-kit.js"></script>
+{% endblock %} 

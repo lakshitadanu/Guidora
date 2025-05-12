@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Career Recommendations - Guidora{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Your Career Recommendations</h2>
+                <p class="text-center mb-4">Based on your assessment results, here are the top 3 career paths that might be suitable for you:</p>
+                
+                <div class="row">
+                    {% for career, confidence in recommendations %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ career }}</h5>
+                                    <div class="progress mb-3">
+                                        <div class="progress-bar" role="progressbar" 
+                                             style="width: {{ confidence|floatformat:2 }}%" 
+                                             aria-valuenow="{{ confidence|floatformat:2 }}" 
+                                             aria-valuemin="0" 
+                                             aria-valuemax="100">
+                                            {{ confidence|floatformat:2 }}%
+                                        </div>
+                                    </div>
+                                    <p class="card-text">Confidence Score: {{ confidence|floatformat:2 }}%</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="{% url 'dashboard' %}" class="btn btn-primary btn-lg">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .progress {
+        height: 25px;
+        background-color: var(--primary-purple);
+    }
+    
+    .progress-bar {
+        background-color: var(--primary-pink);
+    }
+    
+    .card {
+        transition: transform 0.3s ease;
+    }
+    
+    .card:hover {
+        transform: translateY(-5px);
+    }
+</style>
+{% endblock %} 

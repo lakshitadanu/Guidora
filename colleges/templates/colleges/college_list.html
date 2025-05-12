@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<style>
+    .college-card {
+        transition: transform 0.2s;
+    }
+    .college-card:hover {
+        transform: translateY(-5px);
+    }
+    .filter-section {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .badge-category {
+        background-color: var(--primary-pink);
+        color: var(--text-color);
+    }
+    .pagination .page-link {
+        color: var(--text-color);
+        background-color: white;
+        border-color: var(--primary-pink);
+    }
+    .pagination .page-item.active .page-link {
+        background-color: var(--primary-pink);
+        border-color: var(--primary-pink);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <!-- Search and Filter Form -->
+    <form method="get" class="mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Search Input -->
+            <div class="form-group">
+                <label for="search">Search</label>
+                <input type="text" name="search" id="search" value="{{ search }}" 
+                       class="form-control" placeholder="Search colleges...">
+            </div>
+
+            <!-- Category Filter -->
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category" id="category" class="form-control">
+                    <option value="">All Categories</option>
+                    {% for cat in categories %}
+                    <option value="{{ cat.0 }}" {% if category == cat.0 %}selected{% endif %}>
+                        {{ cat.1 }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- State Filter -->
+            <div class="form-group">
+                <label for="state">State</label>
+                <select name="state" id="state" class="form-control">
+                    <option value="">All States</option>
+                    {% for st in states %}
+                    <option value="{{ st.0 }}" {% if state == st.0 %}selected{% endif %}>
+                        {{ st.1 }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Sort Options -->
+            <div class="form-group">
+                <label for="sort">Sort By</label>
+                <select name="sort" id="sort" class="form-control">
+                    <option value="-rank" {% if sort == '-rank' %}selected{% endif %}>Rank (High to Low)</option>
+                    <option value="rank" {% if sort == 'rank' %}selected{% endif %}>Rank (Low to High)</option>
+                    <option value="name" {% if sort == 'name' %}selected{% endif %}>Name (A-Z)</option>
+                    <option value="-name" {% if sort == '-name' %}selected{% endif %}>Name (Z-A)</option>
+                    <option value="state" {% if sort == 'state' %}selected{% endif %}>State</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Submit and Clear Buttons -->
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Apply Filters</button>
+            <a href="{% url 'colleges:college_list' %}" class="btn btn-outline-secondary ml-2">Clear Filters</a>
+        </div>
+    </form>
+
+    <!-- Results Summary -->
+    <div class="mb-4">
+        <p class="text-muted">
+            Found {{ total_colleges }} colleges
+            {% if category or state or search %}
+                matching your filters
+            {% endif %}
+        </p>
+    </div>
+
+    <!-- College Grid -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for college in colleges %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ college.name }}</h5>
+                    <p class="card-text">
+                        <span class="badge bg-primary">{{ college.get_category_display }}</span>
+                        <span class="badge bg-secondary">{{ college.get_state_display }}</span>
+                    </p>
+                    <p class="card-text">
+                        {% if college.ranking %}
+                        <strong>Rank:</strong> {{ college.ranking }}
+                        {% endif %}
+                    </p>
+                    <a href="{% url 'colleges:college_detail' college.pk %}" 
+                       class="btn btn-outline-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                No colleges found matching your criteria.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if colleges.has_other_pages %}
+    <nav aria-label="College pagination" class="mt-4">
+        <ul class="pagination justify-content-center">
+            {% if colleges.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ colleges.previous_page_number }}{% if category %}&category={{ category }}{% endif %}{% if state %}&state={{ state }}{% endif %}{% if search %}&search={{ search }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">
+                    Previous
+                </a>
+            </li>
+            {% endif %}
+
+            {% for i in colleges.paginator.page_range %}
+            <li class="page-item {% if colleges.number == i %}active{% endif %}">
+                <a class="page-link" href="?page={{ i }}{% if category %}&category={{ category }}{% endif %}{% if state %}&state={{ state }}{% endif %}{% if search %}&search={{ search }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">
+                    {{ i }}
+                </a>
+            </li>
+            {% endfor %}
+
+            {% if colleges.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ colleges.next_page_number }}{% if category %}&category={{ category }}{% endif %}{% if state %}&state={{ state }}{% endif %}{% if search %}&search={{ search }}{% endif %}{% if sort %}&sort={{ sort }}{% endif %}">
+                    Next
+                </a>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %} 

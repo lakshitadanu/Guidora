@@ -1,0 +1,364 @@
+{
+    "Software Development": {
+        "trending_roles": [
+            "Full Stack Developer",
+            "Cloud Solutions Architect",
+            "DevOps Engineer",
+            "Machine Learning Engineer",
+            "Mobile App Developer"
+        ],
+        "key_skills": [
+            "cloud computing",
+            "containerization",
+            "microservices",
+            "ci/cd",
+            "serverless architecture"
+        ],
+        "certifications": [
+            "AWS Certified Solutions Architect",
+            "Google Cloud Professional Developer",
+            "Microsoft Azure Developer Associate",
+            "Kubernetes Administrator (CKA)",
+            "Docker Certified Associate"
+        ],
+        "career_progression": [
+            "Junior Developer",
+            "Software Developer",
+            "Senior Developer",
+            "Tech Lead",
+            "Software Architect",
+            "Chief Technology Officer"
+        ]
+    },
+    "Data Science": {
+        "trending_roles": [
+            "Data Scientist",
+            "Machine Learning Engineer",
+            "AI Research Scientist",
+            "Data Engineer",
+            "Business Intelligence Analyst"
+        ],
+        "key_skills": [
+            "python",
+            "machine learning",
+            "deep learning",
+            "big data",
+            "statistical analysis"
+        ],
+        "certifications": [
+            "TensorFlow Developer Certificate",
+            "AWS Machine Learning Specialty",
+            "Google Data Analytics Professional Certificate",
+            "IBM Data Science Professional Certificate",
+            "Microsoft Azure Data Scientist Associate"
+        ],
+        "career_progression": [
+            "Data Analyst",
+            "Junior Data Scientist",
+            "Data Scientist",
+            "Senior Data Scientist",
+            "Lead Data Scientist",
+            "Chief Data Officer"
+        ]
+    },
+    "Cybersecurity": {
+        "trending_roles": [
+            "Security Engineer",
+            "Penetration Tester",
+            "Security Architect",
+            "Incident Response Analyst",
+            "Cloud Security Engineer"
+        ],
+        "key_skills": [
+            "network security",
+            "ethical hacking",
+            "incident response",
+            "cloud security",
+            "security automation"
+        ],
+        "certifications": [
+            "CompTIA Security+",
+            "Certified Ethical Hacker (CEH)",
+            "CISSP",
+            "AWS Security Specialty",
+            "OSCP"
+        ],
+        "career_progression": [
+            "Security Analyst",
+            "Security Engineer",
+            "Senior Security Engineer",
+            "Security Architect",
+            "Chief Information Security Officer"
+        ]
+    },
+    "Cloud Computing": {
+        "trending_roles": [
+            "Cloud Solutions Architect",
+            "Cloud DevOps Engineer",
+            "Cloud Security Engineer",
+            "Cloud Infrastructure Engineer",
+            "Cloud Native Developer"
+        ],
+        "key_skills": [
+            "aws",
+            "azure",
+            "google cloud",
+            "kubernetes",
+            "terraform"
+        ],
+        "certifications": [
+            "AWS Solutions Architect Professional",
+            "Google Cloud Professional Architect",
+            "Microsoft Azure Solutions Architect Expert",
+            "Kubernetes CKAD",
+            "HashiCorp Certified Terraform Associate"
+        ],
+        "career_progression": [
+            "Cloud Support Engineer",
+            "Cloud Engineer",
+            "Senior Cloud Engineer",
+            "Cloud Architect",
+            "Enterprise Cloud Architect"
+        ]
+    },
+    "Web Development": {
+        "trending_roles": [
+            "Frontend Developer",
+            "Backend Developer",
+            "Full Stack Developer",
+            "UI/UX Developer",
+            "Web Performance Engineer"
+        ],
+        "key_skills": [
+            "javascript",
+            "react",
+            "node.js",
+            "typescript",
+            "web security"
+        ],
+        "certifications": [
+            "Meta Frontend Developer Certificate",
+            "AWS Certified Developer",
+            "Google Mobile Web Specialist",
+            "MongoDB Developer",
+            "Node.js Application Developer"
+        ],
+        "career_progression": [
+            "Junior Web Developer",
+            "Web Developer",
+            "Senior Web Developer",
+            "Lead Web Developer",
+            "Web Architect"
+        ]
+    },
+    "Healthcare": {
+        "trending_roles": [
+            "Healthcare Administrator",
+            "Clinical Research Coordinator",
+            "Health Informatics Specialist",
+            "Medical Practice Manager",
+            "Healthcare Consultant"
+        ],
+        "key_skills": [
+            "healthcare regulations",
+            "patient care",
+            "medical terminology",
+            "healthcare management",
+            "clinical documentation"
+        ],
+        "certifications": [
+            "Certified Healthcare Administrator (CHA)",
+            "Registered Health Information Administrator (RHIA)",
+            "Certified Professional in Healthcare Quality (CPHQ)",
+            "Certified Medical Practice Executive (CMPE)",
+            "Project Management in Healthcare"
+        ],
+        "career_progression": [
+            "Healthcare Coordinator",
+            "Department Manager",
+            "Clinical Director",
+            "Healthcare Administrator",
+            "Chief Medical Officer"
+        ]
+    },
+    "Finance": {
+        "trending_roles": [
+            "Financial Analyst",
+            "Investment Banking Associate",
+            "Risk Manager",
+            "Financial Controller",
+            "Wealth Management Advisor"
+        ],
+        "key_skills": [
+            "financial modeling",
+            "risk assessment",
+            "investment analysis",
+            "regulatory compliance",
+            "portfolio management"
+        ],
+        "certifications": [
+            "Chartered Financial Analyst (CFA)",
+            "Certified Public Accountant (CPA)",
+            "Financial Risk Manager (FRM)",
+            "Chartered Financial Consultant (ChFC)",
+            "Certified Financial Planner (CFP)"
+        ],
+        "career_progression": [
+            "Financial Analyst",
+            "Senior Financial Analyst",
+            "Finance Manager",
+            "Finance Director",
+            "Chief Financial Officer"
+        ]
+    },
+    "Marketing": {
+        "trending_roles": [
+            "Digital Marketing Manager",
+            "Brand Manager",
+            "Content Strategist",
+            "Marketing Analytics Manager",
+            "Social Media Director"
+        ],
+        "key_skills": [
+            "digital marketing",
+            "brand management",
+            "market research",
+            "social media strategy",
+            "marketing analytics"
+        ],
+        "certifications": [
+            "Google Analytics Certification",
+            "HubSpot Inbound Marketing",
+            "Facebook Blueprint Certification",
+            "Content Marketing Certification",
+            "Digital Marketing Institute Certification"
+        ],
+        "career_progression": [
+            "Marketing Coordinator",
+            "Marketing Manager",
+            "Senior Marketing Manager",
+            "Marketing Director",
+            "Chief Marketing Officer"
+        ]
+    },
+    "Human Resources": {
+        "trending_roles": [
+            "HR Business Partner",
+            "Talent Acquisition Manager",
+            "Employee Relations Manager",
+            "Compensation Analyst",
+            "Learning & Development Specialist"
+        ],
+        "key_skills": [
+            "talent management",
+            "employee relations",
+            "hr policies",
+            "workforce planning",
+            "organizational development"
+        ],
+        "certifications": [
+            "Professional in Human Resources (PHR)",
+            "SHRM Certified Professional",
+            "Certified HR Manager (CHRM)",
+            "Global Professional in Human Resources (GPHR)",
+            "Certified Compensation Professional (CCP)"
+        ],
+        "career_progression": [
+            "HR Coordinator",
+            "HR Generalist",
+            "HR Manager",
+            "HR Director",
+            "Chief Human Resources Officer"
+        ]
+    },
+    "Education": {
+        "trending_roles": [
+            "Instructional Designer",
+            "Education Technology Specialist",
+            "Curriculum Developer",
+            "Academic Advisor",
+            "Education Program Manager"
+        ],
+        "key_skills": [
+            "curriculum development",
+            "educational technology",
+            "student assessment",
+            "learning management systems",
+            "instructional design"
+        ],
+        "certifications": [
+            "Certified Education Technology Leader",
+            "Instructional Design Certification",
+            "Teaching License",
+            "Educational Leadership Certification",
+            "Learning and Performance Institute Certification"
+        ],
+        "career_progression": [
+            "Teacher/Instructor",
+            "Lead Teacher",
+            "Department Head",
+            "Academic Director",
+            "School Principal/Dean"
+        ]
+    },
+    "Sales": {
+        "trending_roles": [
+            "Account Executive",
+            "Sales Development Representative",
+            "Business Development Manager",
+            "Sales Operations Manager",
+            "Enterprise Sales Director"
+        ],
+        "key_skills": [
+            "relationship building",
+            "negotiation",
+            "sales strategy",
+            "crm software",
+            "business development"
+        ],
+        "certifications": [
+            "Certified Professional Sales Person (CPSP)",
+            "Certified Inside Sales Professional",
+            "Sales Management Certification",
+            "Customer Relationship Management Certification",
+            "Strategic Account Management Certification"
+        ],
+        "career_progression": [
+            "Sales Representative",
+            "Senior Sales Representative",
+            "Sales Manager",
+            "Regional Sales Director",
+            "Chief Sales Officer"
+        ]
+    },
+    "Legal": {
+        "trending_roles": [
+            "Corporate Counsel",
+            "Legal Operations Manager",
+            "Compliance Officer",
+            "Contract Manager",
+            "Legal Technology Specialist"
+        ],
+        "key_skills": [
+            "legal research",
+            "contract review",
+            "regulatory compliance",
+            "legal writing",
+            "case management"
+        ],
+        "certifications": [
+            "Certified Compliance & Ethics Professional (CCEP)",
+            "Certified E-Discovery Specialist",
+            "Legal Project Management Certification",
+            "Contract Management Certification",
+            "Legal Operations Certification"
+        ],
+        "career_progression": [
+            "Legal Assistant",
+            "Associate Attorney",
+            "Senior Attorney",
+            "Legal Director",
+            "General Counsel"
+        ]
+    }
+} 

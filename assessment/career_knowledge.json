@@ -1,0 +1,51 @@
+{
+    "education": {
+        "general": "Education requirements vary by career field. Most professional careers require at least a bachelor's degree, while some technical roles may require specific certifications or vocational training. Advanced positions often require master's degrees or PhDs.",
+        "stem": "STEM careers typically require strong foundations in mathematics and science. Common degrees include Computer Science, Engineering, Physics, Chemistry, and Biology. Many STEM fields value practical experience and certifications.",
+        "business": "Business careers often require degrees in Business Administration, Finance, Marketing, or Economics. Professional certifications like MBA, CFA, or CPA can enhance career prospects.",
+        "healthcare": "Healthcare careers require specific educational paths. Doctors need MBBS and specialization, nurses need B.Sc Nursing, and allied health professionals need relevant bachelor's degrees and certifications.",
+        "arts": "Arts and humanities careers value both formal education and practical experience. Common degrees include Fine Arts, Literature, History, and Philosophy. Portfolio and practical experience are often crucial."
+    },
+    "skills": {
+        "technical": "Technical skills include programming, data analysis, engineering design, laboratory techniques, and specialized software knowledge. These are often learned through education and hands-on experience.",
+        "soft": "Soft skills include communication, teamwork, problem-solving, leadership, and adaptability. These are crucial across all career fields and can be developed through practice and experience.",
+        "industry_specific": "Industry-specific skills vary by field. For example, healthcare requires patient care skills, finance needs analytical skills, and IT requires technical troubleshooting abilities.",
+        "emerging": "Emerging skills include AI and machine learning, data science, digital marketing, cybersecurity, and sustainability practices. These are becoming increasingly important across industries."
+    },
+    "salary": {
+        "factors": "Salary depends on factors like education, experience, location, industry, and company size. Entry-level positions typically pay less than experienced roles, and certain industries offer higher compensation.",
+        "negotiation": "Salary negotiation is an important skill. Research industry standards, highlight your value, and be prepared to discuss your qualifications and achievements.",
+        "benefits": "Total compensation includes salary, bonuses, health insurance, retirement plans, and other benefits. Consider the complete package when evaluating job offers.",
+        "growth": "Salary growth potential varies by career. Some fields offer rapid advancement, while others have more gradual progression. Continuing education and skill development can enhance earning potential."
+    },
+    "job_market": {
+        "trends": "Current job market trends show growth in technology, healthcare, renewable energy, and data-related fields. Remote work and hybrid models are becoming more common.",
+        "demand": "High-demand fields include software development, healthcare, data science, cybersecurity, and renewable energy. These sectors often offer good job security and growth opportunities.",
+        "future": "Future job market will likely emphasize digital skills, sustainability, and adaptability. Automation may change some roles, creating new opportunities in emerging fields.",
+        "global": "Global job market trends include increased remote work, international collaboration, and demand for cross-cultural competencies. Language skills and international experience are valuable."
+    },
+    "personality": {
+        "fit": "Personality traits can influence career satisfaction. Extroverts may prefer people-oriented roles, while introverts might excel in analytical or independent work. Understanding your personality can help choose suitable careers.",
+        "traits": "Key personality traits for career success include conscientiousness, emotional stability, openness to experience, and agreeableness. Different careers value different trait combinations.",
+        "development": "While personality traits are relatively stable, skills and behaviors can be developed. Focus on building strengths and managing challenges in your career path.",
+        "assessment": "Personality assessments can provide insights into suitable career paths. However, they should be used as guides rather than strict determinants of career choice."
+    },
+    "career_change": {
+        "planning": "Career changes require careful planning. Assess your skills, interests, and values. Research new fields and identify transferable skills. Consider education or training needs.",
+        "transition": "Successful career transitions often involve networking, skill development, and gradual changes. Consider part-time work or volunteering in the new field before making a full switch.",
+        "challenges": "Common challenges in career changes include financial considerations, skill gaps, and starting at entry level. Planning and preparation can help manage these challenges.",
+        "opportunities": "Career changes can bring new opportunities for growth, learning, and satisfaction. They can also provide fresh perspectives and expanded professional networks."
+    },
+    "job_search": {
+        "strategies": "Effective job search strategies include networking, online applications, recruitment agencies, and direct company approaches. Tailor your approach to your target industry and role.",
+        "resume": "A strong resume highlights relevant skills, achievements, and experience. Tailor it to each job application and use action verbs to describe your accomplishments.",
+        "interview": "Interview preparation includes researching the company, practicing common questions, and preparing examples of your achievements. Professional appearance and confident communication are important.",
+        "follow_up": "Follow up after applications and interviews to show interest and professionalism. Send thank-you notes and check on application status appropriately."
+    },
+    "work_life": {
+        "balance": "Work-life balance involves managing professional and personal responsibilities. Set boundaries, prioritize self-care, and communicate needs with employers.",
+        "environment": "Work environment affects job satisfaction. Consider factors like company culture, management style, team dynamics, and physical workspace when evaluating opportunities.",
+        "wellbeing": "Workplace wellbeing includes physical, mental, and emotional health. Employers increasingly recognize the importance of supporting employee wellbeing through policies and programs.",
+        "flexibility": "Workplace flexibility, including remote work options and flexible hours, is becoming more common. This can improve work-life balance and job satisfaction."
+    }
+} 

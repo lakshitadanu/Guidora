@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Profile - Guidora{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Edit Your Profile</h2>
+                
+                <form method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+                    
+                    <!-- Personal Information -->
+                    <div class="mb-4">
+                        <h4 class="mb-3">Personal Information</h4>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                {{ form.user_form.full_name|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                {{ form.user_form.email|as_crispy_field }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Academic Information -->
+                    <div class="mb-4">
+                        <h4 class="mb-3">Academic Information</h4>
+                        {% if user.student_type == '12th' %}
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                {{ form.profile_form.school_name|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.board|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.stream|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.tenth_marks|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.twelfth_marks|as_crispy_field }}
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                {{ form.profile_form.college_name|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.course|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.specialization|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.college_cgpa|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.profile_form.graduation_year|as_crispy_field }}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="mb-4">
+                        <h4 class="mb-3">Contact Information</h4>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.user_form.phone_number|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.user_form.pincode|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                {{ form.user_form.city|as_crispy_field }}
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                {{ form.user_form.state|as_crispy_field }}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 mb-3">
+                                {{ form.user_form.address|as_crispy_field }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">Save Changes</button>
+                    </div>
+                </form>
+                
+                <div class="text-center mt-3">
+                    <a href="{% url 'dashboard' %}" class="btn btn-outline-primary">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .form-control:focus {
+        border-color: var(--primary-pink);
+        box-shadow: 0 0 0 0.2rem rgba(255, 182, 193, 0.25);
+    }
+    
+    .btn-outline-primary {
+        color: var(--primary-pink);
+        border-color: var(--primary-pink);
+    }
+    
+    .btn-outline-primary:hover {
+        background-color: var(--primary-pink);
+        color: white;
+    }
+</style>
+{% endblock %} 

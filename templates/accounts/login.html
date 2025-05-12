@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Login - Guidora{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Login</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="{% url 'get_started' %}">Get Started</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .card {
+        margin-top: 2rem;
+    }
+    
+    .form-control:focus {
+        border-color: var(--primary-pink);
+        box-shadow: 0 0 0 0.25rem rgba(255, 182, 193, 0.25);
+    }
+    
+    .btn-primary {
+        margin-top: 1rem;
+    }
+    
+    a {
+        color: var(--primary-pink);
+        text-decoration: none;
+    }
+    
+    a:hover {
+        color: var(--secondary-pink);
+    }
+</style>
+{% endblock %} 

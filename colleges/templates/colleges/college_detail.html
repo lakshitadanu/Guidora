@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'colleges:college_list' %}">Colleges</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ college.name }}</li>
+        </ol>
+    </nav>
+
+    <div class="card">
+        <div class="card-body">
+            <h2 class="card-title">{{ college.name }}</h2>
+            <h6 class="card-subtitle mb-3 text-muted">{{ college.get_category_display }}</h6>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- Basic Information -->
+                    <div class="mb-4">
+                        <h4>Basic Information</h4>
+                        <table class="table">
+                            <tr>
+                                <th width="30%">Location</th>
+                                <td>{{ college.city }}, {{ college.state }}</td>
+                            </tr>
+                            {% if college.ranking %}
+                            <tr>
+                                <th>Ranking</th>
+                                <td>#{{ college.ranking }}</td>
+                            </tr>
+                            {% endif %}
+                            {% if college.established %}
+                            <tr>
+                                <th>Established</th>
+                                <td>{{ college.established }}</td>
+                            </tr>
+                            {% endif %}
+                            {% if college.ownership %}
+                            <tr>
+                                <th>Ownership</th>
+                                <td>{{ college.ownership }}</td>
+                            </tr>
+                            {% endif %}
+                        </table>
+                    </div>
+
+                    <!-- Courses -->
+                    <div class="mb-4">
+                        <h4>Courses Offered</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                {{ college.courses_offered|linebreaks }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facilities -->
+                    {% if college.facilities %}
+                    <div class="mb-4">
+                        <h4>Facilities</h4>
+                        <div class="card">
+                            <div class="card-body">
+                                {{ college.facilities|linebreaks }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="col-md-4">
+                    <!-- Quick Info Card -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Quick Information</h5>
+                            {% if college.approved_by %}
+                            <p><strong>Approved By:</strong><br>{{ college.approved_by }}</p>
+                            {% endif %}
+                            {% if college.affiliated_to %}
+                            <p><strong>Affiliated To:</strong><br>{{ college.affiliated_to }}</p>
+                            {% endif %}
+                            {% if college.website %}
+                            <a href="{{ college.website }}" class="btn btn-primary w-100" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Visit Website
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

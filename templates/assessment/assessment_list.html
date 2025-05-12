@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Assessments{% endblock %}
+
+{% block extra_css %}
+<style>
+    .assessment-card {
+        border: 1px solid #e0e0e0;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .assessment-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+    }
+
+    .assessment-icon {
+        font-size: 2.5rem;
+        color: #6200EA;
+        margin-bottom: 1rem;
+    }
+
+    .status-badge {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        padding: 0.5rem 1.2rem;
+        border-radius: 25px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        z-index: 1;
+    }
+
+    .status-completed {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .status-pending {
+        background-color: #ffc107;
+        color: #212529;
+    }
+
+    .btn-start {
+        background-color: #6200EA;
+        color: white;
+        border: none;
+        padding: 0.7rem 2.5rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+
+    .btn-start:hover {
+        background-color: #5000D2;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(98, 0, 234, 0.3);
+    }
+
+    .btn-start:disabled {
+        background-color: #6c757d;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .btn-view {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 0.7rem 2.5rem;
+        border-radius: 25px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        margin-top: 2rem;
+    }
+
+    .btn-view:hover {
+        background-color: #218838;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
+    }
+
+    .assessment-content {
+        padding: 2rem;
+    }
+
+    .assessment-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 1rem;
+    }
+
+    .assessment-description {
+        color: #6c757d;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    .page-title {
+        color: #6200EA;
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="text-center page-title">Career Assessments</h1>
+    
+    <div class="row g-4">
+        {% for assessment in assessments %}
+        <div class="col-md-6">
+            <div class="assessment-card">
+                <div class="assessment-content">
+                    <span class="status-badge {% if assessment.completed %}status-completed{% else %}status-pending{% endif %}">
+                        {% if assessment.completed %}
+                            Completed
+                        {% else %}
+                            Pending
+                        {% endif %}
+                    </span>
+                    
+                    <div class="text-center">
+                        <i class="{{ assessment.icon }} assessment-icon"></i>
+                        <h3 class="assessment-title">{{ assessment.title }}</h3>
+                        <p class="assessment-description">{{ assessment.description }}</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        {% if assessment.completed %}
+                            <button class="btn btn-start" disabled>Completed</button>
+                        {% else %}
+                            <a href="{% url 'assessment:'|add:assessment.url %}" class="btn btn-start">
+                                Start Assessment
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% if all_completed %}
+    <div class="text-center">
+        <a href="{% url 'assessment:career_recommendations' %}" class="btn btn-view">
+            View Career Recommendations
+        </a>
+    </div>
+    {% endif %}
+</div>
+{% endblock %} 

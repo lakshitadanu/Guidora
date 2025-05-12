@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ assessment_type|title }} Assessment - Guidora{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">{{ assessment_type|title }} Assessment</h2>
+                    
+                    <form method="post" action="{% url 'submit_assessment' assessment_type %}" id="assessmentForm">
+                        {% csrf_token %}
+                        
+                        {% for question in questions %}
+                            <div class="question-card mb-4">
+                                <h5 class="question-text mb-3">{{ forloop.counter }}. {{ question.question_text }}</h5>
+                                
+                                {% if assessment_type == 'personality' %}
+                                    <div class="likert-scale">
+                                        <div class="row text-center mb-2">
+                                            <div class="col"><small>Strongly Disagree</small></div>
+                                            <div class="col"><small>Disagree</small></div>
+                                            <div class="col"><small>Neutral</small></div>
+                                            <div class="col"><small>Agree</small></div>
+                                            <div class="col"><small>Strongly Agree</small></div>
+                                        </div>
+                                        <div class="btn-group w-100" role="group">
+                                            {% for i in "12345" %}
+                                                <input type="radio" 
+                                                       class="btn-check" 
+                                                       name="question_{{ question.id }}" 
+                                                       id="q{{ question.id }}_{{ i }}" 
+                                                       value="{{ i }}"
+                                                       required>
+                                                <label class="btn btn-outline-primary" for="q{{ question.id }}_{{ i }}">
+                                                    {{ i }}
+                                                </label>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                {% else %}
+                                    <div class="options">
+                                        {% for option in question.options %}
+                                            <div class="form-check mb-2">
+                                                <input class="form-check-input" 
+                                                       type="radio" 
+                                                       name="question_{{ question.id }}" 
+                                                       id="q{{ question.id }}_{{ forloop.counter }}" 
+                                                       value="{{ option }}"
+                                                       required>
+                                                <label class="form-check-label" for="q{{ question.id }}_{{ forloop.counter }}">
+                                                    {{ option }}
+                                                </label>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">Submit Assessment</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .question-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .question-text {
+        color: var(--text-color);
+        font-weight: 500;
+    }
+    
+    .likert-scale .btn-group {
+        gap: 5px;
+    }
+    
+    .likert-scale .btn {
+        flex: 1;
+        border-radius: 5px !important;
+    }
+    
+    .btn-check:checked + .btn-outline-primary {
+        background-color: var(--primary-pink);
+        border-color: var(--primary-pink);
+        color: var(--text-color);
+    }
+    
+    .form-check-input:checked {
+        background-color: var(--primary-pink);
+        border-color: var(--primary-pink);
+    }
+    
+    .btn-primary {
+        margin-top: 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.getElementById('assessmentForm').addEventListener('submit', function(e) {
+        const unanswered = document.querySelectorAll('input[type="radio"]:not(:checked)');
+        if (unanswered.length > 0) {
+            e.preventDefault();
+            alert('Please answer all questions before submitting.');
+        }
+    });
+</script>
+{% endblock %} 

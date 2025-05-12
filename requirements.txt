@@ -1,0 +1,9 @@
+Django>=4.2.0
+python-docx>=0.8.11
+PyMuPDF>=1.23.0
+pdfminer.six>=20221105
+requests>=2.31.0
+Pillow>=10.0.0
+python-magic>=0.4.27
+django-crispy-forms>=2.1
+crispy-bootstrap5>=2023.10 
