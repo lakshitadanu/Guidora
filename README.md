@@ -1,6 +1,41 @@
-# Resume Analyzer with Skill & Certification Recommendation
+# Guidora: AI-Powered Career Guidance Platform
 
-A Django-based web application that analyzes resumes and provides personalized career guidance, skill gap analysis, and certification recommendations using Ollama's Mistral model.
+Guidora is a comprehensive Django-based web application designed to empower students and professionals with personalized career guidance, skill gap analysis, resume evaluation, and actionable recommendations. Leveraging advanced machine learning models and the Ollama Mistral LLM, Guidora offers an interactive experience with features like a career counseling chatbot, college browsing, and detailed assessments.
+
+## Project Modules & Features
+
+### 1. Resume Analysis & Gap Detection
+- **Resume Parsing:** Upload PDF/DOCX resumes for automatic extraction of education, experience, and skills.
+- **Skill Gap Analysis:** Identify missing skills for your target role and receive personalized upskilling suggestions.
+- **Certification Recommendations:** Get curated online courses and certifications to bridge your skill gaps.
+
+### 2. Career Recommendation Engine
+- **ML-Based Career Prediction:** Receive top career path recommendations based on your academic profile, personality, and aptitude assessments using custom-trained ML models.
+- **Stream Suitability:** Recommendations are tailored to your academic stream (Science, Commerce, Humanities, etc.).
+- **Confidence Scores:** Understand the rationale and confidence behind each career suggestion.
+
+### 3. Assessments
+- **Personality Assessment:** Take a Big Five personality test to discover your traits and how they align with various careers.
+- **Aptitude Assessment:** Evaluate your logical, numerical, verbal, spatial, and mechanical reasoning skills.
+- **Integrated Recommendations:** Assessment results directly inform your career and skill recommendations.
+
+### 4. AI Career Counseling Chatbot
+- **Conversational Guidance:** Chat with an AI-powered counselor trained on Indian education and job market norms.
+- **Real-Time Q&A:** Get instant answers about career paths, entrance exams, scholarships, and more.
+- **Personalized Advice:** The chatbot adapts its responses based on your profile and assessment results.
+
+### 5. College & Course Browser
+- **College Search:** Browse and filter Indian colleges by category, state, ranking etc .
+- **Detailed Profiles:** View comprehensive information about each college, including programs, rankings, and admission criteria.
+
+### 6. User Accounts & History
+- **Profile Management:** Secure user registration, login, and profile editing.
+
+
+## Technology Stack
+- **Backend:** Django, PostgreSQL, Python
+- **AI/ML:** Custom ML models (joblib/pickle), Ollama Mistral LLM (local API)
+- **Frontend:** Django Templates, HTML/CSS/JS
 
 ## Prerequisites
 
@@ -83,15 +118,6 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## Features
-
-- Resume parsing (PDF/DOCX)
-- Skill gap analysis
-- Certification recommendations
-- Career guidance
-- Target role-based analysis
-- Interactive UI with real-time feedback
-
 ## Usage
 
 1. Start Ollama in a separate terminal:
@@ -100,8 +126,9 @@ ollama serve
 ```
 
 2. Access the application at `http://localhost:8000`
-3. Upload your resume and optionally specify a target role
-4. View the analysis results with recommendations
+3. Register or log in to your account
+4. Upload your resume, take assessments, chat with the AI counselor, and explore colleges
+5. View your personalized analysis, recommendations, and history
 
 ## Troubleshooting
 
@@ -117,4 +144,4 @@ ollama serve
 
 ## Contributing
 
-Feel free to submit issues and enhancement requests! 
+We welcome contributions! Please submit issues, feature requests, or pull requests to help improve Guidora. 
